@@ -36,18 +36,21 @@ public class UserDao {
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
+		
 		return userList;
+		
 	}
+	
 	private void saveUserList(List<User> userList) {
 		try {
+			
 			File file = new File("Users.dat");
 			FileOutputStream fos = new FileOutputStream(file);
-			
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
 			oos.writeObject(userList);
 			oos.close();	
+			
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -55,5 +58,4 @@ public class UserDao {
 			e.printStackTrace();
 		}
 	}
-
 }

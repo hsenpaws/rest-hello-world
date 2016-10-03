@@ -1,7 +1,11 @@
 package au.restservice;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+
+@XmlRootElement(name = "user")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -9,7 +13,7 @@ public class User implements Serializable {
 	private String name;
 	private String profession;
 	
-	public User (){}
+	public User () {}
 	
 	public User (int id, String name, String profession) {
 		this.setId(id);
@@ -21,6 +25,7 @@ public class User implements Serializable {
 		return id;
 	}
 
+	@XmlElement
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -29,6 +34,7 @@ public class User implements Serializable {
 		return profession;
 	}
 
+	@XmlElement
 	public void setProfession(String profession) {
 		this.profession = profession;
 	}
@@ -37,11 +43,9 @@ public class User implements Serializable {
 		return name;
 	}
 
+	@XmlElement
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-	
 	
 }
